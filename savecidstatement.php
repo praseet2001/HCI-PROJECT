@@ -3,6 +3,7 @@
 <?php
 require_once('database/Database.php');
 $db = new Database(); 
+include('session.php');
 include('header.php');
 include('menubar.php');
 
@@ -59,7 +60,7 @@ $errors = array();
 
                  else{  
 
-                        $sql = "UPDATE case_table SET statement=?,status=? WHERE case_id=?";
+                        $sql = "UPDATE investigation SET statement=?,status=? WHERE case_id=?";
 
 
                             $q = $conn->prepare($sql);
@@ -70,11 +71,11 @@ $errors = array();
                          {
                             
                              echo "<script>alert('The Statement saved successfully')</script>";
-                            echo "<script>window.open('index.php','_self')</script>";
+                            echo "<script>window.open('cidcaseview.php','_self')</script>";
     
 
                                 //echo "<script>alert('You have voted already')</script>";
-                             // header( 'Location: cidcaseview.php?' );
+                             // header( 'Location: cidcaseview.php?message=success' );
                       }
                }
 

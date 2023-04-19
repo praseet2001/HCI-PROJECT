@@ -2,10 +2,12 @@
 //Start session
 session_start();
 //Check whether the session variable SESS_MEMBER_ID is present or not
-if (!isset($_SESSION['staffid']) || ($_SESSION['staffid'] == '')) {
-    header("location: ../login.php");
+/*if (!isset($_SESSION['id']) || ($_SESSION['id'] == '')) {
+    header("location: index.php");
     exit();
 }
 
-$session_id=$_SESSION['staffid'];
+$session_id=$_SESSION['id'];
+*/
+//$_SESSION['trans_id']=uniqid();
 ?>
